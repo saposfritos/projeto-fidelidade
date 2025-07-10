@@ -198,10 +198,10 @@ function initHeaderScroll() {
         const scrollY = window.scrollY;
         
         if (scrollY > 100) {
-            header.style.background = 'linear-gradient(135deg, rgba(74, 222, 128, 0.95) 0%, rgba(34, 197, 94, 0.95) 100%)';
+            header.style.background = 'linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.background = 'linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%)';
+            header.style.background = 'linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%)';
             header.style.backdropFilter = 'none';
         }
 
@@ -301,7 +301,7 @@ function initTypingAnimation() {
 
     const text = heroTitle.textContent;
     heroTitle.textContent = '';
-    heroTitle.style.borderRight = '2px solid var(--primary-green)';
+    heroTitle.style.borderRight = '2px solid var(--primary-blue)';
     
     let i = 0;
     const typeWriter = () => {
@@ -345,8 +345,8 @@ function initCounterAnimation() {
         const input = document.querySelector('.newsletter-input');
 
         input.addEventListener('focus', () => {
-            input.style.borderColor = 'var(--primary-green)';
-            input.style.boxShadow = '0 0 0 3px rgba(74, 222, 128, 0.1)';
+            input.style.borderColor = 'var(--primary-blue)';
+            input.style.boxShadow = '0 0 0 3px rgba(30, 64, 175, 0.1)';
         });
 
         input.addEventListener('blur', () => {
@@ -392,6 +392,7 @@ function showNotification(message, type = 'info') {
         top: 20px;
         right: 20px;
         background: ${type === 'success' ? 'var(--primary-green)' : 'var(--gray-800)'};
+        background: ${type === 'success' ? 'var(--primary-blue)' : 'var(--gray-800)'};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 8px;
