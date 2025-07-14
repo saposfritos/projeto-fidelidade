@@ -1,0 +1,411 @@
+# 📁 Arquivos para Upload Manual no GitHub
+
+## Como usar:
+1. Vá para https://github.com/saposfritos/projeto-fidelidade
+2. Para cada arquivo abaixo, clique no arquivo no GitHub
+3. Clique em "Edit this file" (ícone de lápis)
+4. Copie TODO o conteúdo do arquivo daqui e cole lá
+5. Clique em "Commit changes"
+
+---
+
+## 📄 **1. index.html**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENIAC - Programa de Fidelidade</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo à esquerda -->
+                <div class="logo">
+                    <img src="logo.png" alt="Logo ENIAC" style="height: 70px;">
+                </div>
+                
+                <!-- Navbar à direita -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Certificados</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Seja bem vindo ao programa de fidelidade Eniac!
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Aqui você pode acumular pontos realizando atividades<br>
+                        no colégio e trocá-los por prêmios exclusivos!
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary">
+                            Consiga seus pontos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Decorative elements -->
+                <div class="hero-decoration">
+                    <div class="decoration-circle decoration-circle-1"></div>
+                    <div class="decoration-circle decoration-circle-2"></div>
+                    <div class="decoration-circle decoration-circle-3"></div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Acumule Pontos</h3>
+                        <p class="feature-description">Participe de atividades escolares e ganhe pontos automaticamente</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Troque por Prêmios</h3>
+                        <p class="feature-description">Use seus pontos para conseguir prêmios exclusivos da escola</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11H7L12 6L17 11H15V16H9V11ZM12 2C6.48 2 2 6.48 2 12S6.48 22 12 22S22 17.52 22 12S17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4S20 7.59 20 12S16.41 20 12 20Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Acompanhe Progresso</h3>
+                        <p class="feature-description">Veja seu saldo de pontos e histórico de atividades em tempo real</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo.png" alt="Logo ENIAC" style="height: 90px;">
+                    </div>
+                    <p class="footer-description">
+                        Programa de fidelidade que recompensa sua participação nas atividades escolares.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Regulamento</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li>contato@eniac.edu.br</li>
+                        <li>(11) 1234-5678</li>
+                        <li>São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ENIAC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+```
+
+---
+
+## 📄 **2. login.html**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENIAC - Login</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="logo.png" alt="Logo ENIAC" style="height: 70px;">
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link active">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Certificados</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="login-section">
+                <div class="login-container">
+                    <!-- Login Card -->
+                    <div class="login-card">
+                        <div class="login-header">
+                            <div class="login-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h1 class="login-title">Bem-vindo de volta!</h1>
+                            <p class="login-subtitle">Faça login para acessar sua conta do programa de fidelidade</p>
+                        </div>
+
+                        <form class="login-form" id="loginForm">
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+                                    </svg>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">Senha</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 8H17V6C17 3.24 14.76 1 12 1S7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM12 17C10.9 17 10 16.1 10 15S10.9 13 12 13S14 13.9 14 15S13.1 17 12 17ZM15.1 8H8.9V6C8.9 4.29 10.29 2.9 12 2.9S15.1 4.29 15.1 6V8Z" fill="currentColor"/>
+                                    </svg>
+                                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
+                                    <button type="button" class="password-toggle" id="passwordToggle">
+                                        <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5S21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-options">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">Lembrar de mim</span>
+                                </label>
+                                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary login-btn">
+                                <span class="btn-text">Entrar</span>
+                                <div class="btn-loader" style="display: none;">
+                                    <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </form>
+
+                        <div class="login-footer">
+                            <p class="signup-text">
+                                Não tem uma conta? 
+                                <a href="#" class="signup-link">Cadastre-se aqui</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Side Content -->
+                    <div class="login-side">
+                        <div class="side-content">
+                            <h2 class="side-title">Programa de Fidelidade ENIAC</h2>
+                            <p class="side-description">
+                                Acesse sua conta e continue acumulando pontos através das suas atividades escolares.
+                            </p>
+                            
+                            <div class="benefits-list">
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span>Acumule pontos automaticamente</span>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span>Troque por prêmios exclusivos</span>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <div class="benefit-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 11H7L12 6L17 11H15V16H9V11ZM12 2C6.48 2 2 6.48 2 12S6.48 22 12 22S22 17.52 22 12S17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4S20 7.59 20 12S16.41 20 12 20Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span>Acompanhe seu progresso</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative elements -->
+                        <div class="side-decoration">
+                            <div class="decoration-circle decoration-circle-1"></div>
+                            <div class="decoration-circle decoration-circle-2"></div>
+                            <div class="decoration-circle decoration-circle-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo.png" alt="Logo ENIAC" style="height: 90px;">
+                    </div>
+                    <p class="footer-description">
+                        Programa de fidelidade que recompensa sua participação nas atividades escolares.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Regulamento</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li>contato@eniac.edu.br</li>
+                        <li>(11) 1234-5678</li>
+                        <li>São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ENIAC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
+```
+
+---
+
+## 📄 **3. index.js** (ARQUIVO MUITO LONGO - CONTINUA NO PRÓXIMO BLOCO)
+
+**IMPORTANTE:** O arquivo `index.js` é muito longo (mais de 500 linhas). Vou mostrar apenas as partes principais que foram modificadas. Se precisar do arquivo completo, me avise!
+
+**Principais mudanças no index.js:**
+- ✅ Função `initMobileMenu()` adicionada
+- ✅ Suporte completo para menu mobile
+- ✅ Animações do botão hamburger
+- ✅ Overlay para fechar menu
+
+---
+
+## 🚀 **Resumo das mudanças:**
+
+1. **index.html**: Adicionado botão mobile menu
+2. **login.html**: Navbar padronizada + botão mobile menu + link correto para Home
+3. **index.js**: Funcionalidades completas do menu mobile
+
+**Mensagem de commit sugerida:**
+`Fix: Padronizar navbar entre páginas e adicionar menu mobile`
