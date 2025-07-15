@@ -143,19 +143,19 @@ body {
     width: auto;
 }
 
-/* Navigation */
+/* Navigation - Desktop Only */
 .nav {
-    display: flex !important;
+    display: flex;
     align-items: center;
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-4);
+    gap: var(--spacing-6);
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .nav-item {
@@ -163,53 +163,35 @@ body {
 }
 
 .nav-link {
-    color: var(--white) !important;
+    color: var(--white);
     text-decoration: none;
     font-weight: 500;
-    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+    padding: var(--spacing-3) var(--spacing-6);
     border-radius: var(--border-radius-full);
     transition: all var(--transition-fast);
     display: inline-block;
     white-space: nowrap;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .nav-link.active {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
 }
 
-/* Mobile menu button */
+/* Remove mobile menu button completely */
 .mobile-menu-btn {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-1);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-2);
-    border-radius: var(--border-radius-md);
-    transition: background-color var(--transition-fast);
-}
-
-.mobile-menu-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu-btn span {
-    width: 24px;
-    height: 2px;
-    background: var(--white);
-    border-radius: var(--border-radius-full);
-    transition: all var(--transition-fast);
-}
-
-@media (min-width: 768px) {
-    .mobile-menu-btn {
-        display: none;
-    }
+    display: none;
 }
 
 /* Main Content */
