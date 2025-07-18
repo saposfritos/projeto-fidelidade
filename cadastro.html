@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENIAC - Cadastro</title>
     <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="style/cadastro.css">
+    <link rel="stylesheet" href="style/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,9 +34,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="upload_certificado.html" class="nav-link">Certificados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="cadastro.html" class="nav-link active">Cadastro</a>
                         </li>
                     </ul>
                 </nav>
@@ -86,9 +83,24 @@
                                 <label for="phone" class="form-label">Telefone</label>
                                 <div class="input-wrapper">
                                     <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.9C16.08 14.77 15.69 14.88 15.41 15.16L13.21 17.36C10.38 15.93 8.06 13.62 6.63 10.79L8.84 8.58C9.11 8.31 9.23 7.92 9.1 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z" fill="currentColor"/>
+                                        <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.93C16.08 14.82 15.69 14.9 15.41 15.18L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z" fill="currentColor"/>
                                     </svg>
                                     <input type="tel" id="phone" name="phone" class="form-input" placeholder="(XX) XXXXX-XXXX" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">Senha</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 8H17V6C17 3.24 14.76 1 12 1S7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM12 17C10.9 17 10 16.1 10 15S10.9 13 12 13S14 13.9 14 15S13.1 17 12 17ZM15.1 8H8.9V6C8.9 4.29 10.29 2.9 12 2.9S15.1 4.29 15.1 6V8Z" fill="currentColor"/>
+                                    </svg>
+                                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
+                                    <button type="button" class="password-toggle" id="passwordToggle">
+                                        <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5S21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
 
@@ -111,16 +123,16 @@
                     <!-- Side Content -->
                     <div class="login-side">
                         <div class="side-content">
-                            <h2 class="side-title">Junte-se ao Programa de Fidelidade ENIAC</h2>
+                            <h2 class="side-title">Programa de Fidelidade ENIAC</h2>
                             <p class="side-description">
-                                Cadastre-se agora e comece a acumular pontos com suas atividades escolares.
+                                Crie sua conta e comece a acumular pontos através das suas atividades escolares.
                             </p>
                             
                             <div class="benefits-list">
                                 <div class="benefit-item">
                                     <div class="benefit-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
                                         </svg>
                                     </div>
                                     <span>Acumule pontos automaticamente</span>
@@ -128,8 +140,8 @@
                                 
                                 <div class="benefit-item">
                                     <div class="benefit-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" fill="currentColor"/>
                                         </svg>
                                     </div>
                                     <span>Troque por prêmios exclusivos</span>
@@ -137,8 +149,8 @@
                                 
                                 <div class="benefit-item">
                                     <div class="benefit-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9 11H7L12 6L17 11H15V16H9V11ZM12 2C6.48 2 2 6.48 2 12S6.48 22 12 22S22 17.52 22 12S17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4S20 7.59 20 12S16.41 20 12 20Z"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 11H7L12 6L17 11H15V16H9V11ZM12 2C6.48 2 2 6.48 2 12S6.48 22 12 22S22 17.52 22 12S17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4S20 7.59 20 12S16.41 20 12 20Z" fill="currentColor"/>
                                         </svg>
                                     </div>
                                     <span>Acompanhe seu progresso</span>

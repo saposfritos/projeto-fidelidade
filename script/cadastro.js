@@ -1,142 +1,129 @@
-// Cadastro Form Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do formulário
     const cadastroForm = document.getElementById('cadastroForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
+    const passwordToggle = document.getElementById('passwordToggle');
+    const passwordInput = document.getElementById('password');
     const phoneInput = document.getElementById('phone');
-    const submitBtn = document.querySelector('.login-btn');
 
-    // Phone mask
-    phoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        
-        if (value.length <= 11) {
-            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-            if (value.length < 14) {
-                value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-            }
-        }
-        
-        e.target.value = value;
-    });
-
-    // Form validation
-    function validateField(input, validationFn, errorMessage) {
-        const isValid = validationFn(input.value);
-        const errorElement = input.parentNode.parentNode.querySelector('.error-message');
-        
-        if (errorElement) {
-            errorElement.remove();
-        }
-        
-        if (!isValid && input.value.trim() !== '') {
-            input.classList.add('error');
-            input.classList.remove('success');
+    // Toggle de visibilidade da senha
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
             
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message';
-            errorDiv.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                ${errorMessage}
-            `;
-            input.parentNode.parentNode.appendChild(errorDiv);
-        } else if (isValid && input.value.trim() !== '') {
-            input.classList.remove('error');
-            input.classList.add('success');
-        } else {
-            input.classList.remove('error', 'success');
-        }
-        
-        return isValid;
+            // Trocar ícone do olho
+            const eyeIcon = passwordToggle.querySelector('.eye-icon path');
+            if (type === 'text') {
+                eyeIcon.setAttribute('d', 'M12 7C9.24 7 7 9.24 7 12S9.24 17 12 17S17 14.76 17 12S14.76 7 12 7ZM12 15C10.34 15 9 13.66 9 12S10.34 9 12 9S15 10.34 15 12S13.66 15 12 15ZM12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5S21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5Z');
+            } else {
+                eyeIcon.setAttribute('d', 'M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5S21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z');
+            }
+        });
     }
 
-    // Validation functions
-    function validateName(name) {
-        return name.trim().length >= 2 && /^[a-zA-ZÀ-ÿ\s]+$/.test(name);
+    // Máscara para telefone
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                if (value.length <= 2) {
+                    value = value.replace(/(\d{0,2})/, '($1');
+                } else if (value.length <= 7) {
+                    value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                }
+            }
+            
+            e.target.value = value;
+        });
     }
 
-    function validateEmail(email) {
+    // Submissão do formulário
+    if (cadastroForm) {
+        cadastroForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Elementos do formulário
+            const submitBtn = cadastroForm.querySelector('.login-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            
+            // Dados do formulário
+            const formData = new FormData(cadastroForm);
+            const userData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                password: formData.get('password')
+            };
+
+            // Validações básicas
+            if (!userData.name || userData.name.trim().length < 2) {
+                alert('Por favor, insira um nome válido.');
+                return;
+            }
+
+            if (!userData.email || !isValidEmail(userData.email)) {
+                alert('Por favor, insira um e-mail válido.');
+                return;
+            }
+
+            if (!userData.phone || userData.phone.replace(/\D/g, '').length < 10) {
+                alert('Por favor, insira um telefone válido.');
+                return;
+            }
+
+            if (!userData.password || userData.password.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                return;
+            }
+
+            // Mostrar loading
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'flex';
+            submitBtn.disabled = true;
+
+            // Simular envio (aqui você faria a requisição real)
+            setTimeout(() => {
+                // Esconder loading
+                btnText.style.display = 'block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+
+                // Simular sucesso
+                alert('Cadastro realizado com sucesso! Redirecionando para o login...');
+                
+                // Redirecionar para login
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+    }
+
+    // Função para validar e-mail
+    function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    function validatePhone(phone) {
-        const phoneRegex = /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
-        return phoneRegex.test(phone);
-    }
-
-    // Real-time validation
-    nameInput.addEventListener('blur', function() {
-        validateField(this, validateName, 'Nome deve ter pelo menos 2 caracteres e conter apenas letras');
-    });
-
-    emailInput.addEventListener('blur', function() {
-        validateField(this, validateEmail, 'Por favor, insira um e-mail válido');
-    });
-
-    phoneInput.addEventListener('blur', function() {
-        validateField(this, validatePhone, 'Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX');
-    });
-
-    // Form submission
-    cadastroForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate all fields
-        const isNameValid = validateField(nameInput, validateName, 'Nome deve ter pelo menos 2 caracteres e conter apenas letras');
-        const isEmailValid = validateField(emailInput, validateEmail, 'Por favor, insira um e-mail válido');
-        const isPhoneValid = validateField(phoneInput, validatePhone, 'Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX');
-        
-        if (isNameValid && isEmailValid && isPhoneValid) {
-            // Show loading state
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(function() {
-                // Hide loading state
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-                
-                // Show success message
-                alert('Cadastro realizado com sucesso! Bem-vindo ao programa de fidelidade ENIAC.');
-                
-                // Reset form
-                cadastroForm.reset();
-                
-                // Remove validation classes
-                [nameInput, emailInput, phoneInput].forEach(input => {
-                    input.classList.remove('error', 'success');
-                });
-                
-                // Remove error messages
-                document.querySelectorAll('.error-message').forEach(error => {
-                    error.remove();
-                });
-                
-            }, 2000);
-        } else {
-            // Scroll to first error
-            const firstError = document.querySelector('.form-input.error');
-            if (firstError) {
-                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                firstError.focus();
-            }
-        }
-    });
-
-    // Input focus effects
+    // Animações de foco nos inputs
     const inputs = document.querySelectorAll('.form-input');
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
-            this.parentNode.classList.add('focused');
+            this.parentElement.classList.add('focused');
         });
-        
+
         input.addEventListener('blur', function() {
-            this.parentNode.classList.remove('focused');
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
         });
+
+        // Verificar se já tem valor ao carregar
+        if (input.value) {
+            input.parentElement.classList.add('focused');
+        }
     });
 });
 
