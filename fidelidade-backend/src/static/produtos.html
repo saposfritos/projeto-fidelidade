@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENIAC - Produtos</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/produtos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botão hamburguer flutuante -->
+    <button id="floatingSidebarToggle" aria-label="Abrir/Fechar menu">
+        <span>&#9776;</span>
+    </button>
+    <!-- Sidebar Lateral -->
+    <aside class="sidebar sidebar-closed" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="images/logo.png" alt="Logo ENIAC" style="height: 50px;">
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="user-avatar"></div>
+            <div class="user-info">
+                <span class="user-name">Usuário</span>
+                <span class="user-points">Pontos: 0</span>
+<button class="sidebar-logout-btn" id="logoutBtn">Sair</button>
+            </div>
+        </div>
+        
+    </aside>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo à esquerda -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo ENIAC" style="height: 70px;">
+                </div>
+                
+                <!-- Navbar à direita -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="produtos.html" class="nav-link active">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload_certificado.html" class="nav-link">Certificados</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="products-hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Loja de Prêmios</h1>
+                    <p class="hero-description">
+                        Troque seus pontos por prêmios incríveis!<br>
+                        Cada estrela vale 1 ponto no nosso sistema de recompensas.
+                    </p>
+                    
+                    <!-- User Points Display -->
+                    <div class="user-points">
+                        <div class="points-card">
+                            <div class="points-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="points-info">
+                                <span class="points-label">Seus Pontos</span>
+                                <span class="points-value">0</span>
+                            </div>
+                        </div>
+                        <div class="user-info">
+                            <!-- Será preenchido pelo JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters Section -->
+            <section class="filters-section">
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label class="filter-label">Categoria:</label>
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="all">Todas as categorias</option>
+                            <option value="electronics">Eletrônicos</option>
+                            <option value="books">Livros</option>
+                            <option value="accessories">Acessórios</option>
+                            <option value="vouchers">Vouchers</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Ordenar por:</label>
+                        <select class="filter-select" id="sortFilter">
+                            <option value="price-asc">Menor preço</option>
+                            <option value="price-desc">Maior preço</option>
+                            <option value="name">Nome A-Z</option>
+                            <option value="popular">Mais populares</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Faixa de pontos:</label>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="2000" value="2000" class="range-slider">
+                            <span class="range-value">Até <span id="rangeValue">2000</span> ⭐</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Produto 1 -->
+                    <div class="product-card" data-category="electronics" data-price="850" data-name="Fone Bluetooth">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&crop=center" alt="Fone Bluetooth Premium">
+                            <div class="product-badge">Popular</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Fone Bluetooth Premium</h3>
+                            <p class="product-description">Fone de ouvido sem fio com cancelamento de ruído e bateria de longa duração.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">850</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Fone Bluetooth Premium', 850)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="product-card" data-category="books" data-price="300" data-name="Livro Programação">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=300&fit=crop&crop=center" alt="Livro de Programação">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Livro: Python para Iniciantes</h3>
+                            <p class="product-description">Guia completo para aprender programação Python do básico ao avançado.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">300</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Livro: Python para Iniciantes', 300)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="product-card" data-category="accessories" data-price="450" data-name="Mochila Escolar">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&crop=center" alt="Mochila Escolar">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Mochila Escolar Premium</h3>
+                            <p class="product-description">Mochila resistente com compartimentos para notebook e materiais escolares.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">450</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Mochila Escolar Premium', 450)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="product-card" data-category="vouchers" data-price="200" data-name="Vale Lanchonete">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=300&fit=crop&crop=center" alt="Vale Lanchonete">
+                            <div class="product-badge new">Novo</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Vale Lanchonete R$ 20</h3>
+                            <p class="product-description">Voucher para usar na lanchonete da escola. Válido por 30 dias.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">200</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Vale Lanchonete R$ 20', 200)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 5 -->
+                    <div class="product-card" data-category="electronics" data-price="1200" data-name="Tablet">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=300&fit=crop&crop=center" alt="Tablet">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tablet 10" Android</h3>
+                            <p class="product-description">Tablet com tela de 10 polegadas, ideal para estudos e entretenimento.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">1,200</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Tablet 10 Android', 1200)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 6 -->
+                    <div class="product-card" data-category="accessories" data-price="150" data-name="Kit Canetas">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=300&h=300&fit=crop&crop=center" alt="Kit Canetas">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kit Canetas Coloridas</h3>
+                            <p class="product-description">Conjunto com 24 canetas coloridas para desenho e anotações.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">150</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Kit Canetas Coloridas', 150)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 7 -->
+                    <div class="product-card" data-category="vouchers" data-price="500" data-name="Vale Cinema">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1489185078527-20140f217ade?w=300&h=300&fit=crop&crop=center" alt="Vale Cinema">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Vale Cinema - 2 Ingressos</h3>
+                            <p class="product-description">Dois ingressos para qualquer sessão no cinema. Válido por 60 dias.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">500</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Vale Cinema - 2 Ingressos', 500)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 8 -->
+                    <div class="product-card" data-category="books" data-price="250" data-name="Revista Científica">
+                        <div class="product-image">
+                            <img src="https://www.eletrolar.com/wp-content/uploads/2023/04/4QM0oTM0EDZkZmOyJmLt92YuMWZjFmcvRXakVGQvF2YhRWZypTM3cjMzATOzIjOnBnauETO4YzM3YTN4YkMlYTN48Gd1FmRyUSN0ADNx8VL0ETLfpTO.jpg" alt="Revista Científica">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Copo Stanley Eniac</h3>
+                            <p class="product-description">Copo Stanley com logo do Eniac.</p>
+                            <div class="product-price">
+                                <span class="price-stars">⭐</span>
+                                <span class="price-value">250</span>
+                                <span class="price-label">pontos</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Revista Científica Anual', 250)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Resgatar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmar Resgate</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="cart-item">
+                    <h3 id="modalProductName"></h3>
+                    <div class="cart-price">
+                        <span class="price-stars">⭐</span>
+                        <span id="modalProductPrice"></span>
+                        <span class="price-label">pontos</span>
+                    </div>
+                </div>
+                <div class="points-check">
+                    <p>Seus pontos atuais: <span id="modalCurrentPoints"><strong>0 ⭐</strong></span></p>
+                    <p>Pontos restantes após resgate: <span id="modalRemainingPoints">0</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+                <button class="btn-confirm" onclick="confirmRedeem()">Confirmar Resgate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <div class="modal-header">
+                <div class="success-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2>Resgate Realizado!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Seu produto <strong id="successProductName"></strong> foi resgatado com sucesso!</p>
+                <p>Pontos gastos: <span id="successPointsSpent"></span></p>
+                <p>Pontos restantes: <span id="successRemainingPoints"></span></p>
+                <p>Você receberá instruções sobre a retirada em seu email.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeSuccessModal()">Continuar Comprando</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Logo ENIAC" style="height: 90px;">
+                    </div>
+                    <p class="footer-description">
+                        Programa de fidelidade que recompensa sua participação nas atividades escolares.
+                    </p>
+                </div>
+
+                
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li>contato@eniac.edu.br</li>
+                        <li>(11) 1234-5678</li>
+                        <li>São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ENIAC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/produtos.js"></script>
+    <script>
+    // Sidebar abrir/fechar
+    const sidebar = document.getElementById('sidebar');
+    const floatingSidebarToggle = document.getElementById('floatingSidebarToggle');
+    floatingSidebarToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('sidebar-closed');
+    });
+    </script>
+</body>
+</html>
+
