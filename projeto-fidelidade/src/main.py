@@ -9,6 +9,7 @@ from src.models.user import db
 from src.routes.user import user_bp
 from src.routes.products import products_bp
 from src.routes.certificates import certificates_bp
+from src.routes.admin import admin_bp
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
@@ -20,6 +21,7 @@ CORS(app, supports_credentials=True)
 app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(products_bp, url_prefix='/api')
 app.register_blueprint(certificates_bp, url_prefix='/api')
+app.register_blueprint(admin_bp, url_prefix='/api')
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}"
@@ -38,7 +40,8 @@ with app.app_context():
         admin_user = User(
             username='admin',
             email='admin@eniac.edu.br',
-            points=5000
+            points=5000,
+            is_admin=True
         )
         admin_user.set_password('admin123')
         db.session.add(admin_user)

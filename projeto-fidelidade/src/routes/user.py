@@ -93,8 +93,7 @@ def register():
         'user': user.to_dict()
     }), 201
 
-@user_bp.route('/auth/logout', methods=['POST'])
-@login_required
+@user_bp.route('/logout', methods=['POST'])
 def logout():
     session.pop('user_id', None)
     return jsonify({'message': 'Logout successful'}), 200
